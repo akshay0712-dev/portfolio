@@ -37,7 +37,7 @@ const SkillTopic = [
 const Skills = () => {
   return (
     <>
-    <div className="flex flex-col py-20 justify-center ">
+    <div id='Skills' className="flex flex-col py-20 justify-center ">
     <div className="capitalize text-5xl font-bold w-[90vw] md:w-[80vw] mx-auto pb-10 h-fit">
      Skills
    </div>

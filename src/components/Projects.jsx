@@ -42,8 +42,8 @@ const projectDetail = [
 const Projects = () => {
   return (
     <>
-      <div className="">
-      <div className="capitalize text-4xl md:text-5xl font-bold w-[90vw] md:w-[80vw] mx-auto pb-4 md:pb-10">
+      <div className="scroll-smooth" id="Projects">
+        <div className="capitalize text-4xl md:text-5xl font-bold w-[90vw] md:w-[80vw] mx-auto pb-4 md:pb-10">
           Project Showcase
         </div>
         {projectDetail.map((item, index) => {
@@ -52,7 +52,11 @@ const Projects = () => {
               key={index}
               className="grid grid-cols-1 md:grid-cols-2 gap-6 w-[95vw] md:w-[80vw] mx-auto md:py-6"
             >
-              <div className={`flex flex-col justify-evenly text-lg pb-0 md:pb-7 text-[#3a3a3a] ${index%2 == 1 ? "md:order-last" : ""}`}>
+              <div
+                className={`flex flex-col justify-evenly text-lg pb-0 md:pb-7 text-[#3a3a3a] ${
+                  index % 2 == 1 ? "md:order-last" : ""
+                }`}
+              >
                 <div className="text-xl font-semibold py-3 text-black">{`${
                   index + 1
                 }. ${item.tittle}`}</div>
@@ -83,17 +87,22 @@ const Projects = () => {
                 </div>
               </div>
               <div className="">
-                <img
-                  src={`pic${index + 1}.png`}
-                  alt=""
-                  className="w-[90vw] md:w-[45vw] rounded-lg "
-                />
+                <a
+                  href={`https://akshay0712-dev.github.io/${item.URL}`}
+                  target="_blank"
+                  className="cursor-pointer"
+                >
+                  <img
+                    src={`pic${index + 1}.png`}
+                    alt=""
+                    className="w-[90vw] md:w-[45vw] rounded-lg hover:scale-105 transform transition duration-300 shadow-lg hover:shadow-2xl"
+                  />
+                </a>
               </div>
             </div>
           );
         })}
       </div>
-
     </>
   );
 };
