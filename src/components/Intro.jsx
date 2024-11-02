@@ -24,7 +24,7 @@ const Intro = () => {
 
 
         <a href="#Projects">
-          <div className="bg-black group text-white px-5 py-3 w-fit font-semibold text-xl my-3 rounded-md hover:text-black hover:bg-white hover:border-2 hover:border-black cursor-pointer shadow-lg transform transition duration-300 hover:shadow-2xl animate-pulse scroll-smooth">
+          <div className="bg-black group text-white px-5 py-3 w-fit font-semibold text-base lg:text-xl my-3 rounded-md hover:text-black hover:bg-white hover:border-2 hover:border-black cursor-pointer shadow-lg transform transition duration-300 hover:shadow-2xl animate-pulse scroll-smooth">
             <span className="group-hover:scale-105 transform transition duration-300">
               My Projects
             </span>
