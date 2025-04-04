@@ -1,4 +1,6 @@
 import React from "react";
+import { delay, motion } from "framer-motion";
+import { fadeIn } from "./varient";
 
 const projectDetail = [
   {
@@ -43,12 +45,22 @@ const Projects = () => {
   return (
     <>
       <div className="scroll-smooth" id="Projects">
-        <div className="capitalize text-4xl md:text-5xl font-bold w-[90vw] md:w-[80vw] mx-auto pb-4 md:pb-10">
+        <motion.div
+        initial={{ opacity: 0, scale: 0.75 }}
+        whileInView={{opacity:1, scale: 1}} 
+        transition={{ ease: "easeOut", duration: 0.3, delay: 0.1 }}
+        viewport={{ once: true, amount: 0.2 }}
+         className="capitalize text-4xl md:text-5xl font-bold ml-[5vw] md:ml-[10vw] w-fit pb-4 md:pb-10 origin-center">
           Project Showcase
-        </div>
+        </motion.div>
         {projectDetail.map((item, index) => {
           return (
-            <div
+            <motion.div
+              variants={fadeIn("down", 80, 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              transition={{ ease: "linear", duration: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               key={index}
               className="grid grid-cols-1 md:grid-cols-2 gap-6 w-[95vw] md:w-[80vw] mx-auto md:py-6"
             >
@@ -99,7 +111,7 @@ const Projects = () => {
                   />
                 </a>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

@@ -1,34 +1,50 @@
 import React from "react";
+import { delay, motion } from "framer-motion";
+import { fadeIn } from "./varient";
+
+const nav = [
+  { name: "Home", href: "#Home" },
+  { name: "About", href: "#About" },
+  { name: "Skills", href: "#Skills" },
+  { name: "Experience", href: "#Experience" },
+  { name: "Projects", href: "#Projects" },
+];
 
 const navbar = () => {
   return (
     <>
-      <div className=" flex flex-row justify-center py-6  md:justify-end md:pr-[10vw] items-center gap-5 md:gap-10 sticky top-0 w-[100vw] z-10 bg-[rgba(255,255,255,0.96)] shadow-md">
-        <a
-          href="#Home"
-          className="md:mx-0 bg-black group text-white px-3 py-1 md:px-5 md:py-3 w-fit font-semibold text-lg md:text-xl rounded-md hover:text-black hover:bg-white hover:border-2 hover:border-black cursor-pointer shadow-lg transform transition duration-300 hover:shadow-2xl scroll-smooth"
-        >
-          Home
-        </a>
-        <a
-          href="#About"
-          className="md:mx-0 bg-black group text-white px-2 py-1 md:px-5 md:py-3 w-fit font-semibold text-lg md:text-xl rounded-md hover:text-black hover:bg-white hover:border-2 hover:border-black cursor-pointer shadow-lg transform transition duration-300 hover:shadow-2xl scroll-smooth"
-        >
-          About
-        </a>
-        <a
-          href="#Skills"
-          className="md:mx-0 bg-black group text-white px-2 py-1 md:px-5 md:py-3 w-fit font-semibold text-lg md:text-xl rounded-md hover:text-black hover:bg-white hover:border-2 hover:border-black cursor-pointer shadow-lg transform transition duration-300 hover:shadow-2xl scroll-smooth"
-        >
-          Skills
-        </a>
-        <a
-          href="#Projects"
-          className="md:mx-0 bg-black group text-white px-2 py-1 md:px-5 md:py-3 w-fit font-semibold text-lg md:text-xl rounded-md hover:text-black hover:bg-white hover:border-2 hover:border-black cursor-pointer shadow-lg transform transition duration-300 hover:shadow-2xl scroll-smooth"
-        >
-          Project
-        </a>
-      </div>
+      <motion.div
+      initial={
+        {
+          opacity: 0,
+          y: -50,
+        }
+      }
+      whileInView={
+        {
+          opacity: 1,
+          y:0
+        }
+      }
+      
+      transition={{ ease: "linear", duration: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+       className="bg-neutral-900 w-[90vw] mx-auto rounded-full px-[3vw] py-4 flex items-center justify-center md:justify-between top-2 md:top-8 fixed left-[5vw] z-10 " >
+        <div className="text-xl md:text-xl font-[500] text-white ">
+          <span className="text-red-600">Akshay</span>  Kumar
+        </div>
+        <div className="flex items-center justify-between gap-7 ">
+        {nav.map((item) => (
+          <a
+            key={item}
+            href={item.href}
+            className="text-white text-xl font-semibold hidden md:block hover:text-[#ccc] cursor-pointer shadow-lg transform transition duration-300 hover:scale-110 "
+          >
+            {item.name}
+          </a>
+        ))}
+        </div>
+      </motion.div>
     </>
   );
 };

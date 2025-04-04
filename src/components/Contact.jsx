@@ -4,8 +4,8 @@ const Contact = () => {
   return (
     <>
       <div className="grid md:grid-cols-2 mx-auto  mt-6 bg-[#00000011]">
-        <div className="mx-auto w-full text-center border-r-4 border-black pb-7">
-          <div className="text-2xl md:text-4xl font-bold py-6 ">
+        <div className="mx-auto w-full text-center border-b-2 md:border-r-2 border-[#73727285] pb-7">
+          <div className="text-2xl md:text-4xl font-bold py-6">
             Get in Touch
           </div>
 
