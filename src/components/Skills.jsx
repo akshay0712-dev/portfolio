@@ -1,168 +1,123 @@
 import React from "react";
-const SkillTopic = [
+import {
+  FaCode,
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaNodeJs,
+  FaGithub,
+  FaDocker,
+} from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiMongoose,
+  SiPostman,
+  SiPython,
+  SiCplusplus,
+  SiC,
+  SiCloudinary,
+} from "react-icons/si";
+
+import { motion } from "framer-motion";
+
+const skillsData = [
   {
-    topic: "Language",
-    image: [
-      "https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white",
-      "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black",
+    topic: "Languages",
+    icon: <SiCplusplus className="text-xl text-blue-500" />,
+    skills: [
+      { name: "C++", icon: <SiCplusplus />, tip: "Object-oriented programming and STL" },
+      { name: "C", icon: <SiC />, tip: "Procedural logic and memory-level programming" },
+      { name: "JavaScript", icon: <SiJavascript />, tip: "DOM manipulation and async programming" },
+      { name: "Python", icon: <SiPython />, tip: "Scripting and automation, NumPy/Pandas basics" },
     ],
   },
   {
-    topic: "FrontEnd",
-    image: [
-      "https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white",
-      "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white",
-      "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black",
-      "https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black",
-      "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
+    topic: "Frontend",
+    icon: <FaHtml5 className="text-xl text-orange-500" />,
+    skills: [
+      { name: "HTML", icon: <FaHtml5 />, tip: "Semantic structure and accessibility" },
+      { name: "CSS", icon: <FaCss3Alt />, tip: "Responsive layouts, Flexbox, Grid" },
+      { name: "React", icon: <FaReact />, tip: "Component-based architecture and hooks" },
+      { name: "Tailwind CSS", icon: <SiTailwindcss />, tip: "Utility-first responsive styling" },
     ],
   },
   {
     topic: "Backend",
-    image: [
-      "https://img.shields.io/badge/Express.js-FEFEFE?logo=express&logoColor=black&style=flat",
-      "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
+    icon: <FaNodeJs className="text-xl text-green-600" />,
+    skills: [
+      { name: "Node.js", icon: <FaNodeJs />, tip: "REST API and server-side scripting" },
+      { name: "Express.js", icon: <SiExpress />, tip: "Minimal and flexible Node.js framework" },
+      { name: "MongoDB", icon: <SiMongodb />, tip: "Document-based NoSQL database" },
+      { name: "Mongoose", icon: <SiMongoose />, tip: "MongoDB ODM for schema modeling" },
     ],
   },
   {
-    topic: "Other Tools",
-    image: [
-      "https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white",
-      "https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white",
-      "https://img.shields.io/badge/Vscode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white",
-      "https://img.shields.io/badge/NPM-2D3136.svg?style=for-the-badge&logo=npm&logoColor=white",
+    topic: "Tools",
+    icon: <FaGithub className="text-xl text-black" />,
+    skills: [
+      { name: "GitHub", icon: <FaGithub />, tip: "Version control and collaboration" },
+      { name: "Postman", icon: <SiPostman />, tip: "Testing and debugging APIs" },
+      { name: "Cloudinary", icon: <SiCloudinary />, tip: "Media storage and transformations" },
+      { name: "Docker", icon: <FaDocker />, tip: "Containerizing and deploying applications" },
+    ],
+  },
+  {
+    topic: "Areas of Interest",
+    icon: <FaCode className="text-xl text-purple-600" />,
+    skills: [
+      { name: "Web Development", icon: <FaCode />, tip: "Full-stack apps with real-world utility" },
+      { name: "Generative AI", icon: <FaCode />, tip: "LLMs, embeddings, RAG, agentic workflows" },
     ],
   },
 ];
+
 const Skills = () => {
   return (
-    <>
-      <div id="Skills" className="flex flex-col py-20 justify-center ">
-        <div className="capitalize text-5xl font-bold w-[90vw] md:w-[80vw] mx-auto pb-10 h-fit">
-          Skills
-        </div>
+    <section id="Skills" className="bg-white text-black py-20 px-6">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif"
+        style={{ fontFamily: "'Pacifico', 'Great Vibes', 'DynaPuff', cursive" }}>
+        My Skill
+      </h2>
 
-        {SkillTopic.map((skill, index) => {
-          return (
-            <div
-              key={index}
-              className="flex flex-row gap-6 md:items-center w-[90vw] md:w-[80vw] mx-auto py-6"
-            >
-              <div className="capitalize text-xl font-bold w-fit">
-                {skill.topic}:{" "}
-              </div>
-              <div className="flex flex-row flex-wrap gap-6 items-center">
-                {skill.image.map((image) => {
-                  return <img src={image} alt="" className="" />;
-                })}
-              </div>
+      <div className="max-w-6xl mx-auto grid gap-10">
+        {skillsData.map((section, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.2 }}
+            viewport={{ once: true }}
+            className="bg-gray-50 rounded-2xl border border-gray-200 shadow-md p-6"
+          >
+            <div className="flex items-center gap-2 mb-6">
+              {section.icon}
+              <h3 className="text-xl font-semibold text-gray-800">{section.topic}</h3>
             </div>
-          );
-        })}
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              {section.skills.map((skill, j) => (
+                <div
+                  key={j}
+                  className="relative group bg-white p-4 rounded-xl flex flex-col items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition"
+                >
+                  <div className="text-3xl mb-2 text-blue-700">{skill.icon}</div>
+                  <div className="text-sm font-medium text-center">{skill.name}</div>
+
+                  {/* Tooltip */}
+                  <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-xs px-3 py-1 rounded-full -top-8 z-10 whitespace-nowrap pointer-events-none">
+                    {skill.tip}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </>
+    </section>
   );
 };
 
 export default Skills;
-
-//   <div
-//   className="min-h-[100vh] flex justify-evenly items-center flex-row mb-5 flex-wrap"
-//   id="Projects"
-// >
-//   <div className="capitalize text-5xl font-bold w-[80vw] mx-auto pb-20 h-fit">
-//     Skills
-//   </div>
-
-//   <div className="flex flex-col   items-center mb-5 justify-start gap-10 h-[60vh] ">
-//     <div className="flex flex-row justify-start gap-16 w-[80vw] items-center flex-wrap">
-//       <div className="capitalize text-3xl font-bold  w-fit">Language</div>
-//       {/* language */}
-//       <img
-//         src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"
-//         alt="C++"
-//         className="h-[50px]"
-//       />
-//       <img
-//         src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
-//         alt="JavaScript"
-//         className="h-[50px]"
-//       />
-//     </div>
-//     <div className="flex flex-row justify-start gap-16 w-[80vw] items-center flex-wrap">
-//       <div className="capitalize text-3xl font-bold  w-fit">
-//         {" "}
-//         FrontEnd
-//       </div>
-//       {/* FrontEnd */}
-//       <img
-//         src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
-//         alt="HTML"
-//         className="h-[50px]"
-//       />
-//       <img
-//         src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
-//         alt="CSS"
-//         className="h-[50px]"
-//       />
-//       <img
-//         src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
-//         alt="JavaScript"
-//         className="h-[50px]"
-//       />
-//       <img
-//         src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"
-//         alt="React"
-//         className="h-[50px]"
-//       />
-//       <img
-//         src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
-//         alt="Tailwind CSS"
-//         className="h-[50px]"
-//       />
-//     </div>
-
-//     <div className="flex flex-row justify-start gap-16 w-[80vw] items-center flex-wrap">
-//       <div className="capitalize text-3xl font-bold  w-fit"> Backend</div>
-//       {/* **Backend**: */}
-//       <img
-//         src="https://img.shields.io/badge/Express.js-FEFEFE?logo=express&logoColor=black&style=flat"
-//         alt="Express"
-//         className="h-[50px]"
-//       />
-//       <img
-//         src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"
-//         alt="MongoDB"
-//         className="h-[50px]"
-//       />
-//     </div>
-
-//     <div className="flex flex-row justify-start gap-16 w-[80vw] items-center flex-wrap">
-//       <div className="capitalize text-3xl font-bold  w-fit">
-//         {" "}
-//         Other Tools
-//       </div>
-//       {/* **Other Tools**: */}
-//       <img
-//         src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"
-//         alt="Git"
-//         className="h-[50px]"
-//       />
-//       <img
-//         src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
-//         alt="GitHub"
-//         className="h-[50px]"
-//       />
-//       <img
-//         src="https://img.shields.io/badge/Vscode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"
-//         alt="VS CODE"
-//         className="h-[50px]"
-//       />
-//       <img
-//         src="https://img.shields.io/badge/NPM-2D3136.svg?style=for-the-badge&logo=npm&logoColor=white"
-//         alt="npm"
-//         className="h-[50px]"
-//       />
-//     </div>
-//   </div>
-// </div>
