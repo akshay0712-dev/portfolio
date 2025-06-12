@@ -47,11 +47,8 @@
 
 body {
     font-family: var(--body-font);
-    margin: 0;
-    padding: 0;
     background-color: var(--light-color);
     color: var(--dark-color);
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
