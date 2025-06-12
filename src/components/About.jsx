@@ -9,12 +9,13 @@ const About = () => {
       className="md:min-h-[100vh] flex justify-center items-center flex-col mdflex-col "
     >
       <motion.div
-      variants={fadeIn("up", 80, 0.3)}
-      initial="hidden"
-      whileInView={"show"}
-      transition={{ ease: "linear", duration: 0.2 }}
-      viewport={{ once: true, amount: 0.2 }}
-       className="capitalize text-5xl font-bold w-[90vw] md:w-[80vw] mx-auto pb-6 md:pb-20">
+        variants={fadeIn("up", 80, 0.3)}
+        initial="hidden"
+        whileInView={"show"}
+        transition={{ ease: "linear", duration: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
+        className="capitalize text-5xl font-bold w-[90vw] md:w-[80vw] mx-auto pb-6 md:pb-20"
+      >
         About me
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-2 justify-between w-[90vw] md:w-[80vw] mx-auto md:gap-9">
@@ -48,7 +49,7 @@ const About = () => {
             to become a well-rounded developer.
           </p>
 
-          <p className="text-base md:text-lg pb-7 text-[#3a3a3a]">
+          <p className="text-base md:text-lg pb-7 text-[#3a3a3a]  ">
             In addition to my development journey, I’m always eager to explore
             the latest trends in technology, whether it’s{" "}
             <b className="text-neutral-700">new features in phones or PC</b>, or
@@ -64,12 +65,13 @@ const About = () => {
           </p>
         </motion.div>
         <motion.div
-        variants={fadeIn("left", 80, 0.3)}
-        initial="hidden"
-        whileInView={"show"}
-        transition={{ ease: "linear", duration: 0.2 }}
-        viewport={{ once: true, amount: 0.2 }}
-         className="text-base md:text-lg">
+          variants={fadeIn("left", 80, 0.3)}
+          initial="hidden"
+          whileInView={"show"}
+          transition={{ ease: "linear", duration: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="text-base md:text-lg"
+        >
           <p className="font-medium pb-7">
             I’ve built several applications that solve real-world problems,
             including:

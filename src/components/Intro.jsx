@@ -1,67 +1,84 @@
 import React from "react";
-import { delay, motion } from "framer-motion";
+import { delay, motion, useAnimation } from "framer-motion";
 import { fadeIn } from "./varient";
-
+import { useEffect } from "react";
 const Intro = () => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const sequence = async () => {
+      // Run entry animation first
+      await controls.start({
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: { duration: 1.2, ease: "easeOut" },
+      });
+
+      // Then start continuous floating
+      controls.start({
+        y: [0, -15, 0],
+        rotate: [0, 2, -2, 0],
+        boxShadow: [
+          "0px 0px 0px rgba(0, 0, 0, 0)",
+          "0px 10px 30px rgba(0, 0, 0, 0.2)",
+          "0px 0px 0px rgba(0, 0, 0, 0)",
+        ],
+        transition: {
+          duration: 4,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeInOut",
+        },
+      });
+    };
+
+    sequence();
+  }, [controls]);
   return (
     <div
       id="Home"
-      className="flex flex-col-reverse md:flex-row min-h-[100vh] items-center justify-center gap-4 md:gap-10 mt-[6vh] md:mt-0  "
+      className="flex flex-col-reverse md:flex-row min-h-[100vh] items-center justify-center gap-4 md:gap-10 mt-[6vh] md:mt-0 bg-gradient-to-r from-[#4f46e5] to-[#7c3aed]  "
     >
       <div className="w-[90vw] md:w-[50vw] md:min-h-[100vh] flex justify-center  items-center">
         <motion.img
-         initial={
-          {
-            opacity: 0,
-            x: -100,
-          }
-        }
-        whileInView={
-          {
-            opacity: 1,
-            x: 0
-          }
-        }
-        
-        transition={{ ease: "linear", duration: 1,delay: 0.1 }}
-        viewport={{ once: true, amount: 0.2 }}
-         src="image.png" alt="" className="w-[90vw] md:w-[45vw] " />
+          initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+          animate={controls}
+          src="image.jpg"
+          alt="Premium Profile"
+          className="w-[80vw] md:w-[25vw] rounded-full shadow-xl"
+        />
       </div>
       <motion.div
-        initial={
-          {
-            opacity: 0,
-            y: 100,
-          }
-        }
-        whileInView={
-          {
-            opacity: 1,
-            y:0
-          }
-        }
-        
+        initial={{
+          opacity: 0,
+          y: 100,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
         transition={{ ease: "linear", duration: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         className="max-w-[90vw] md:max-w-[45vw] "
       >
-        <div className="text-xl pb-4 font-medium  text-gray-400 ">
+        <div className="text-xl pb-4 font-medium  text-white">
           <img
-            src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3500&pause=1000&center=false&vCenter=true&random=false&width=78&lines=Hello!+%F0%9F%91%8B;नमस्ते&color=000000b6&weight=500"
+            src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3500&pause=1000&center=false&vCenter=true&random=false&width=120&lines=Hello!+%F0%9F%91%8B;नमस्ते&color=f9fafb&weight=500"
             alt="Hello"
             className="h-auto min-h-[50px]"
           />
         </div>
-        <div className="text-4xl md:text-5xl font-extrabold pb-4 text-neutral-800 ">
-          I'm <span className="text-[red]">Akshay </span>Kumar
+        <div className="text-4xl md:text-5xl font-extrabold pb-4 text-white ">
+          I'm <span className="text-[#facc15]">Akshay Kumar</span>
         </div>
         <img
-          src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3500&pause=1000&center=false&vCenter=true&random=false&width=435&lines=Self-taught+Front-End+Developer%2C;Aspiring+Software+Developer%2C;Computer+Science+Student%2C;Tech+Enthusiast%2C;Active+Learner%2FResearcher%2C;Love+to+learn+new+stuffs..&color=6b7280"
+          src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3500&pause=1000&center=false&vCenter=true&random=false&width=550&lines=Self-taught+Front-End+Developer%2C;Aspiring+Software+Developer%2C;Computer+Science+Student%2C;Tech+Enthusiast%2C;Active+Learner%2FResearcher%2C;Love+to+learn+new+stuffs..&color=f9fafb"
           alt="Web Developer"
           className="h-auto min-h-[50px]"
         />
 
-        <p className="pb-4 text-lg md:text-xl text-gray-500 selection:bg-neutral-800 selection:text-white selection:px-3 selection:py-6">
+        <p className="pb-4 text-lg md:text-xl text-white selection:bg-neutral-800 selection:text-white selection:px-3 selection:py-6">
           I’m a passionate BTech student with a strong interest in web
           development. I love building sleek, functional websites and
           applications, constantly expanding my skill set with new technologies.
@@ -69,9 +86,16 @@ const Intro = () => {
 
         <div className="flex items-center justify-between md:w-[80%] ">
           <a href="#Projects">
-            <div className="bg-black group text-white px-5 py-3 w-fit font-semibold text-base lg:text-xl my-3 rounded-md hover:text-black hover:bg-white border-2 hover:border-black cursor-pointer shadow-lg transform transition duration-300 hover:shadow-2xl animate-pulse scroll-smooth">
+             <div className="bg-[#facc15] group text-black px-5 py-3 w-fit font-semibold text-base lg:text-xl my-3 rounded-[100px] hover:text-black hover:bg-white border-2 hover:border-black cursor-pointer shadow-lg transform transition duration-300 hover:shadow-2xl animate-pulse scroll-smooth">
               <span className="group-hover:scale-105 transform transition duration-300">
                 My Projects
+              </span>
+            </div>
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1dL6dYhlFhcnZMo1yfISY0qViJ-DjUngX">
+            <div className="bg-[#e7963a] group text-black px-5 py-3 w-fit font-semibold text-base lg:text-xl my-3 rounded-[100px] hover:text-black hover:bg-white border-2 hover:border-black cursor-pointer shadow-lg transform transition duration-300 hover:shadow-2xl animate-pulse scroll-smooth">
+              <span className="group-hover:scale-105 transform transition duration-300">
+                Resume 
               </span>
             </div>
           </a>
@@ -81,7 +105,7 @@ const Intro = () => {
             {/* .....Github Icon......... */}
             <a
               href="https://github.com/akshay0712-dev"
-              className="text-black hover:text-white hover:bg-black rounded-[50%]"
+              className="text-white hover:text-black rounded-[50%]"
             >
               <span className="sr-only">GitHub</span>
               <svg
@@ -101,7 +125,7 @@ const Intro = () => {
             {/* .....linkedin..... */}
             <a
               href="https://www.linkedin.com/in/akshay-kumar-93b487215/"
-              className="text-black hover:text-[#0077B5] flex items-center"
+              className="text-white hover:text-black flex items-center"
             >
               <svg
                 fill="currentColor"
@@ -122,7 +146,7 @@ const Intro = () => {
             {/* .......Instagram..... */}
             <a
               href="https://www.instagram.com/akshay__rishu/"
-              className="text-black hover:text-red-500"
+              className="text-white hover:text-black"
             >
               <span className="sr-only">Instagram</span>
               <svg
@@ -139,8 +163,10 @@ const Intro = () => {
               </svg>
             </a>
           </div>
+          
         </div>
       </motion.div>
+      
     </div>
   );
 };
