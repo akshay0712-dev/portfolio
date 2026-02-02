@@ -45,7 +45,7 @@ const Intro = () => {
         <motion.img
           initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
           animate={controls}
-          src="image.jpg"
+          src={"image.jpg" || "https://res.cloudinary.com/detchyy1o/image/upload/f_auto,q_auto,w_400/image_polq7f.png"}
           alt="Premium Profile"
           className="w-full max-w-[250px] md:max-w-[300px] rounded-full shadow-xl"
         />
@@ -61,7 +61,7 @@ const Intro = () => {
       >
         <div className="text-lg xl:text-xl pb-4 font-medium text-white">
           <img
-            src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3500&pause=1000&center=false&vCenter=true&random=false&width=120&lines=Hello!+%F0%9F%91%8B;नमस्ते&color=f9fafb&weight=500"
+            src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3500&pause=1000&center=false&vCenter=true&random=false&width=120&lines=Hello!+%F0%9F%91%8B;नमस्ते+🙏&color=f9fafb&weight=500"
             alt="Hello"
             className="min-h-[50px]"
           />
