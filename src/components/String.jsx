@@ -20,8 +20,8 @@ const String = () => {
   const resetString = () => {
    gsap.to(pathRef.current, {
       attr: { d: "M 0 50 Q 50 50 100 50" },
-      duration: 0.8,
-      ease: "elastic.out(1,0.1)",
+      duration: 2.8,
+      ease: "elastic.out(2,0.1)",
     });
 
     // Reset state AFTER animation target is defined
