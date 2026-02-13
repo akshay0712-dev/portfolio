@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+
 
 const Contact = () => {
   return (
@@ -15,7 +16,7 @@ const Contact = () => {
               href="mailto:akshayrishu4@gmail.com"
               className="text-black flex items-center gap-4 hover:text-white hover:bg-black rounded-lg px-3"
             >
-              <span class="material-symbols-outlined  scale-125 ">mail</span>
+              <span className="material-symbols-outlined  scale-125 ">mail</span>
               <span className="font-bold">akshayrishu4@gmail.com</span>
             </a>
 
@@ -79,11 +80,11 @@ const Contact = () => {
               href="#Home"
               className="flex justify-center md:justify-normal items-center gap-4 pb-3 relative group"
             >
-              <span class="material-symbols-outlined scale-110 lg:scale-125">
+              <span className="material-symbols-outlined scale-110 lg:scale-125">
                 home
               </span>
               <span className="uppercase font-bold">home</span>
-              <span class="underline-effect absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+              <span className="underline-effect absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </a>
 
             {/* ........ABOUT....... */}
@@ -91,11 +92,11 @@ const Contact = () => {
               href="#Home"
               className="flex justify-center md:justify-normal item-center gap-4 pb-4 relative group"
             >
-              <span class="material-symbols-outlined scale-110 lg:scale-125">
+              <span className="material-symbols-outlined scale-110 lg:scale-125">
                 auto_stories
               </span>
               <span className="uppercase font-bold">ABOUT</span>
-              <span class="underline-effect absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+              <span className="underline-effect absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </a>
 
             {/* .......SKILLS..... */}
@@ -103,11 +104,11 @@ const Contact = () => {
               href="#Home"
               className="flex justify-center md:justify-normal item-center gap-4 pb-4 relative group"
             >
-              <span class="material-symbols-outlined scale-110 lg:scale-125">
+              <span className="material-symbols-outlined scale-110 lg:scale-125">
                 engineering
               </span>
               <span className="uppercase font-bold">SKILLS</span>
-              <span class="underline-effect absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+              <span className="underline-effect absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </a>
 
             {/* .......PROJETS..... */}
@@ -115,11 +116,11 @@ const Contact = () => {
               href="#Home"
               className="flex justify-center md:justify-normal item-center gap-4 pb-4 relative group"
             >
-              <span class="material-symbols-outlined scale-110 lg:scale-125">
+              <span className="material-symbols-outlined scale-110 lg:scale-125">
                 fact_check
               </span>
               <span className="uppercase font-bold">PROJETS</span>
-              <span class="underline-effect absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+              <span className="underline-effect absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </a>
           </div>
         </div>
