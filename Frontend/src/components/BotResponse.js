@@ -4,9 +4,7 @@ const ai = new GoogleGenAI({
   apiKey: import.meta.env.VITE_API_KEY,
 });
 
-const models = await ai.models.list();
 
-console.log("Models:" ,models);
 
 
 // 🔥 YOUR PERSONAL DATA (CONDENSED BUT POWERFUL)
