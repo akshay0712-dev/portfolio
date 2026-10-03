@@ -45,7 +45,7 @@ const Intro = () => {
         <motion.img
           initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
           animate={controls}
-          src={"image.jpg" || "https://res.cloudinary.com/detchyy1o/image/upload/f_auto,q_auto,w_400/image_polq7f.png"}
+          src={"Akshay.jpeg" ||"image.jpg" || "https://res.cloudinary.com/detchyy1o/image/upload/f_auto,q_auto,w_400/image_polq7f.png"}
           alt="Premium Profile"
           className="w-full max-w-[250px] md:max-w-[300px] rounded-full shadow-xl"
         />
